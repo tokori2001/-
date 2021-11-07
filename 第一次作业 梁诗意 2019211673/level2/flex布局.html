@@ -1,0 +1,147 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-08 00:50:34
+ * @LastEditTime: 2021-11-08 03:19:03
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \source\piano\flex布局.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+      .box1{
+          width: 1000px;
+          height: 500px;
+          background-color: white;
+          border: 1px black solid;
+      }
+      .txt{
+          font-size: 30px;
+          margin: 20px;
+      }
+      .photo{
+          width: 1000px;
+          height: 400px;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          align-content:space-around;
+      }
+      .photo1{
+           width: 164px;
+           height: 164px;
+           background-image: url(./photo/1.png);
+           background-size: 100% 100%;
+           overflow: hidden;
+      }
+      .box2{
+           width: 1000px;
+           height: 500px;
+           background-color: white;
+           border: 1px black solid;
+           margin-top:30px;
+      }
+      .linehead{
+          margin-left:20px ;
+      }
+      ul>li{
+          list-style:decimal
+      }
+      .tables{
+          margin:0px 30px ;
+      }
+      table{
+          width: 100%;
+          border: 1px black solid;
+      }
+      .head{
+          text-align: left;
+          background-color: black;
+          color: white;
+      }
+      table>tfoot{
+          font-weight: bold;
+          background-color: gray;
+      }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="box1">
+            <div class="txt">图片</div>
+            <div class="photo">
+                <div class="photo1"></div>
+                <div class="photo1"></div>
+                <div class="photo1"></div>
+                <div class="photo1"></div>
+                <div class="photo1"></div>
+                <div class="photo1"></div>
+                <div class="photo1"></div>
+                <div class="photo1"></div>
+                <div class="photo1"></div>
+                <div class="photo1"></div>
+            </div>
+        </div>
+        <div class="box2">
+            <div class="linehead">
+            <h1>最后一篇文章一级标题</h1>
+            <h2>文章二级标题</h2>
+            <h3>文章作者 文章发表时间</h3>
+            </div>
+            <ul>
+                <li>第一名</li>
+                <li>第二名</li>
+                <li>第三名</li>
+            </ul>
+            <div class="tables">
+            <table >
+                <thead class="head">
+                    <tr>
+                        <th>表头</th>
+                        <th>表头</th>
+                        <th>表头</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>表内单元格</td>
+                        <td>表内单元格</td>
+                        <td>操作</td>
+                    </tr>
+                    <tr>
+                        <td>表内单元格</td>
+                        <td>表内单元格</td>
+                        <td>操作</td>
+                    </tr>
+                    <tr>
+                        <td>表内单元格</td>
+                        <td>表内单元格</td>
+                        <td>操作</td>
+                    </tr>
+                    <tr>
+                        <td>表内单元格</td>
+                        <td>表内单元格</td>
+                        <td>操作</td>
+                    </tr>
+                </tbody>
+                <tfoot >
+                    <tr>
+                        <td>总计</td>
+                        <td>数目</td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
