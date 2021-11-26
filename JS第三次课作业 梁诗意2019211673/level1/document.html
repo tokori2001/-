@@ -1,0 +1,75 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-26 20:36:49
+ * @LastEditTime: 2021-11-27 02:13:24
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \jsdata\level1\document.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bck{
+           
+           height:200px;
+           background-color: white;
+           text-align: center;
+        }
+        .color{
+            text-align: center;
+        }
+        p{
+            font-size: 13px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var bck=document.getElementById("bck");
+            var but1=document.getElementById("but1");
+            but1.onclick=function(){
+                bck.style.backgroundColor="yellow";
+            }
+            var but2=document.getElementById("but2");
+            but2.onclick=function(){
+               bck.style.backgroundColor="blue";
+            }
+            var but3=document.getElementById("but3");
+            but3.onclick=function(){
+                bck.style.backgroundColor="red";
+            }
+            var text1=document.getElementById("text1");
+            var add=document.getElementById("add");
+            var reduce=document.getElementById("reduce");
+            var x=13;
+            add.onclick=function(){
+                x=x+5;
+                text1.style.fontSize=x+"px";
+            }
+            reduce.onclick=function(){
+                x=x-5;
+                text1.style.fontSize=x+"px";
+            }
+        }
+        
+        
+    </script>
+</head>
+<body>
+    <div id="bck">主题颜色更换</div>
+    <div class="color"> 
+        <button id="but1">黄色</button>
+        <button id="but2">蓝色</button>
+        <button id="but3">红色</button>
+    </div>
+    <div class="text">
+        <p id="text1">玉不啄,不成器;人不学,不知道。——《礼记》</p>
+        <button id="add">增大字体</button>
+        <button id="reduce">减小字体</button>
+    </div>
+</body>
+</html>

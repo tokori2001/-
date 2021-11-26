@@ -1,0 +1,66 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-27 01:18:23
+ * @LastEditTime: 2021-11-27 01:56:07
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \jsdata\level3\level3.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+        color: black;
+        display: flex;
+        }
+        a{
+            flex-direction: row-reverse;
+        }
+        #msg{
+            width: 400px;
+            height: 400px;
+            margin-top: 50px;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var text=document.querySelector('textarea');
+            var send=document.getElementById('send')
+            var ul=document.querySelector('ul');
+            
+            send.onclick=function(){
+                var li=document.createElement('li');
+                li.innerHTML=text.value+'&nbsp'+'<a href="javascript:;">delate</a>';
+                ul.insertBefore(li,ul.children[0]);
+                var remove=document.querySelectorAll('a');
+                for(var i=0;i<remove.length;i++)
+                {
+                    remove[i].onclick=function(){
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div>
+    <textarea id="" cols="30" rows="5"></textarea>
+    </div>
+    <button id="send">发布</button>
+    <div id="msg"><h1>留言板</h1>
+    <ul>
+    </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-26 22:41:17
+ * @LastEditTime: 2021-11-27 00:54:10
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \jsdata\level2\level2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+		<style>
+      	li {
+        	color:black;
+        }
+		</style>
+        <script>
+            window.onload=function(){
+                var ul=document.getElementsByTagName('ul')[0];
+                ul.onclick=function(event){
+                    alert(event.target.innerHTML)
+                    console.log(event.target.innerHTML);
+                }
+                var lists=document.querySelectorAll('li');
+                for(var i=0;i<lists.length;i++)
+                {
+                    if(i%2==0)
+                    {
+                        lists[i].style.color="red";
+                    }else{
+                        lists[i].style.color="green";
+                    }
+                }
+            }
+        </script>
+</head>
+<body>
+    <ul >
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+</body>
+</html>
