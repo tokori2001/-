@@ -1,0 +1,228 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-18 12:33:33
+ * @LastEditTime: 2021-12-18 19:26:56
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \test\level3.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>level1</title>
+    <link rel="stylesheet" href='./htmlamg/iconfont.css'>
+   <style>
+        
+        .box1{
+            width: 492px;
+            height: 62px;
+            background-color: cornflowerblue;
+            line-height: 60px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+        .amg1{
+            
+            margin-left: 20px;
+            color: white;
+        }
+        .text1{
+            font-size: 20px;
+            color: white;
+        }
+        .amg2{
+            
+            margin-right: 20px;
+            color: white;
+        }
+        .shouye{
+            font-size: 30px; 
+        }
+        .liebiao{
+            font-size: 30px;
+        }
+        .hide{
+            width: 492px;
+            height: 40px;
+            line-height: 40px;
+            border-bottom: solid 1px red;
+            background-color: white;
+            border-left: none;
+            margin: 0px;
+            
+        }   
+        #hide{
+            position: fixed;
+            padding: 0px;
+            display:none;
+        }
+        
+
+        .box2{
+            width: 492px;
+            height: 64px;
+            display: flex;
+            justify-content: center;
+            line-height: 60px;
+            border-bottom: solid 1px red;
+        }
+        .left{
+            font-size: 30px;
+        }
+        .right{
+            font-size: 30px;
+        }
+        #left{
+            margin-right: 20px;
+        }
+        .text2{
+            font-size: 20px;
+            color: black;
+        }
+        #right{
+           margin-left: 20px;
+        }
+
+        .box3{
+            width: 492px;
+            display: flex;
+            justify-content: start;
+        }
+        ul{
+           list-style:none ;
+           display: flex;
+           flex-direction: column-reverse;
+           
+        }
+        
+        li{
+            
+            color: blue;
+            height: 60px;
+            margin-top: 20px;
+            line-height: 60px;
+            border-left: solid 1px grey;
+        }
+
+        .box4{
+            position: fixed;
+            top:700px;
+            left:413px;
+        }
+        .zhiding{
+            font-size: 50px;
+        }
+        #ul3{
+            list-style:none ;
+            float: left;
+            padding: 0px;
+            line-height: 60px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+           const xhr=new XMLHttpRequest();
+           xhr.open('GET','https://api.oick.cn/lishi/api.php?limit=10',true);
+           xhr.onreadystatechange = function(){
+                   if(xhr.readyState === 4 ){
+                   if(xhr.status >= 200 && xhr.status < 300 || xhr.status==304){ 
+                       const data=JSON.parse(xhr.responseText);
+                       const data1=data.result;
+                       const data2=data.day;
+            
+                       const date=document.getElementById('date');
+                       date.innerHTML=data2;
+                       
+                       var ul=document.getElementById('ul');
+                       for(var i=0;i<data1.length;i++)
+                       {
+                           var li=document.createElement('li');
+                           li.style.border='none';
+                           li.innerHTML=data1[i].date.slice(0,5);
+                           ul.appendChild(li);
+                       }
+                       var ul1=document.getElementById('ul1');
+                       for(var i=0;i<data1.length;i++)
+                       {
+                           var li1=document.createElement('li');
+                           
+                           li1.innerHTML=data1[i].title;
+                           ul1.appendChild(li1);
+                       }
+                       }
+                    } 
+
+           }
+           xhr.send();
+           
+           var icon=document.getElementById('icon');
+           var close=document.getElementById('close');
+           var i=0;
+           icon.addEventListener('touchstart',function(e){
+               var hide=document.getElementById('hide');
+              if(i%2==0)
+              {
+                hide.style.display='unset';
+                close.innerHTML='&#xeca0';
+              }
+              if(i%2==1)
+              {
+                hide.style.display='none';
+                close.innerHTML='&#xe6e4;';
+              }
+              i++;
+           })
+           
+           
+           
+           
+        }
+        window.addEventListener("resize", ()=>{
+               if (window.orientation === 180 || window.orientation === 0) {
+       
+                 console.log('竖屏');
+                  };
+                 if (window.orientation === 90 || window.orientation === -90 ){
+        }
+        });
+    </script>
+</head>
+<body>
+    <div class="box1">
+       <div class='amg1'><i class="iconfont shouye">&#xe751;</i></div>
+       <div class='text1'>历史上的今天</div>
+       <div class="amg2" id='icon'><i class="iconfont liebiao" id='close'>&#xe6e4;</i></div>
+       
+    </div>
+    <div id='hide'>
+        <ul id='ul3'>
+            <li class='hide'>电话区号查询</li>
+            <li class='hide'>手机号码查询</li>
+            <li class='hide'>万年历查询</li>
+            <li class='hide'>北京时间查询</li>
+            <li class='hide'>IP地址查询</li>
+           </ul>
+    </div>
+    <div class="box2">
+        <div id='left'><i class='iconfont left'>&#xe773;</i></div>
+        <div class='text2' id='date'></div>
+        <div id="right"><i class='iconfont right'>&#xe634;</i></div>
+    </div>
+    <div class='box3'>
+        <div class='box3.1'>
+            <ul id='ul'>
+            </ul>
+        </div>
+        <div class='box3.2'>
+            <ul id='ul1'>
+
+            </ul>
+        </div>
+    </div>
+    <div class='box4'><i class='iconfont zhiding'>&#xe60f;</i></div>
+</body>
+</html>

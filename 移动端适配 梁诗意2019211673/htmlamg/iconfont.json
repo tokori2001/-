@@ -1,0 +1,51 @@
+{
+  "id": "3027528",
+  "name": "移动端适配",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6616997",
+      "name": "关闭",
+      "font_class": "guanbi",
+      "unicode": "eca0",
+      "unicode_decimal": 60576
+    },
+    {
+      "icon_id": "1613827",
+      "name": "回到顶部",
+      "font_class": "huidaodingbu",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "1472261",
+      "name": "右翻页",
+      "font_class": "youfanye-xue",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "4933458",
+      "name": "左翻页",
+      "font_class": "zuofanye",
+      "unicode": "e773",
+      "unicode_decimal": 59251
+    },
+    {
+      "icon_id": "577364",
+      "name": "首页",
+      "font_class": "shouye",
+      "unicode": "e751",
+      "unicode_decimal": 59217
+    },
+    {
+      "icon_id": "1046065",
+      "name": "单列列表",
+      "font_class": "danlieliebiao",
+      "unicode": "e6e4",
+      "unicode_decimal": 59108
+    }
+  ]
+}
