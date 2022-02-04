@@ -1,0 +1,62 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-02-03 15:46:52
+ * @LastEditTime: 2022-02-04 16:36:56
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \2.5\ws_tictactoeclient.htm
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>node js</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            section {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 5px;
+            height: 300px;
+            width: 300px;
+            background-color: black;
+            position: relative;
+            left: 30%;
+            }
+
+            section div {
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            cursor: pointer;
+            background-color: white;
+            color: red;
+            font: bold 60px Arial;
+            
+            }
+
+            #leave {
+            display: none;
+            
+            }
+
+            footer {
+            margin-top: 40px;
+            
+            }
+        </style>
+    </head>
+    <body>
+        
+        <section id="board"></section>
+        <p id="info"> 游戏状态</p>
+        <footer>
+            <button id="join">加入游戏</button>
+            <input id="serverIp" placeholder="输入ID(非必须)">
+            <button id="leave">离开</button>
+        </footer>
+        
+        <script src='message.js' type='text/javascript'></script>
+    </body>
+</html>
